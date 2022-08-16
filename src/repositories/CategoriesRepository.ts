@@ -1,10 +1,12 @@
+import {
+  ICategoryRepository,
+  ICreateCategoryDTO,
+} from "../interfaces/ICategoriesRepository";
 import { Category } from "../model/Category";
 
 const categories: Array<Category> = [];
 
-interface ICreateCategoryDTO extends Omit<Category, "id" | "created_at"> {}
-
-class CategoriesRepository {
+class CategoriesRepository implements ICategoryRepository {
   private categories: Array<Category>;
 
   constructor() {
