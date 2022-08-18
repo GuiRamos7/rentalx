@@ -5,7 +5,7 @@ interface IRequest {
   description: string;
 }
 
-class CreateCategoryService {
+class CreateCategoryUseCase {
   constructor(private categoriesRepository: ICategoryRepository) {}
 
   execute({ description, name }: IRequest): void {
@@ -19,4 +19,4 @@ class CreateCategoryService {
   }
 }
 
-export { CreateCategoryService };
+export { CreateCategoryUseCase };
