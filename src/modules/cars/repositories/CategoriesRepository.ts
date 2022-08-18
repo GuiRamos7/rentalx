@@ -1,7 +1,7 @@
 import {
   ICategoryRepository,
   ICreateCategoryDTO,
-} from "../interfaces/ICategoriesRepository";
+} from "../../../interfaces/ICategoriesRepository";
 import { Category } from "../model/Category";
 
 const categories: Array<Category> = [];
