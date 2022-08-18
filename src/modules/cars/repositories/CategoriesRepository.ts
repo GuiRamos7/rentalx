@@ -9,8 +9,18 @@ const categories: Array<Category> = [];
 class CategoriesRepository implements ICategoryRepository {
   private categories: Array<Category>;
 
-  constructor() {
+  private static INSTACE: CategoriesRepository;
+
+  private constructor() {
     this.categories = [];
+  }
+
+  public static getInstance(): CategoriesRepository {
+    if (!CategoriesRepository.INSTACE) {
+      CategoriesRepository.INSTACE = new CategoriesRepository();
+    }
+
+    return CategoriesRepository.INSTACE;
   }
 
   create({ description, name }: ICreateCategoryDTO): void {
